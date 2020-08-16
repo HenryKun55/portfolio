@@ -213,6 +213,7 @@ nav li a {
 .left #Skills ul li {
   color: var(--white);
   font-size: 1.4rem;
+  min-width: 100px;
 }
 
 .left #Skills ul li {
