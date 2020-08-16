@@ -10,6 +10,13 @@
 
   --gray: gray;
   --darkGray: darkslategray;
+
+  --javascript: #F0D91D;
+  --react: #61dafb;
+  --react-native: #40bbdd;
+  --java: #2F958E;
+  --figma: #F86E60;
+
 }
 
 * {
@@ -127,67 +134,173 @@ nav li a {
   position: relative;
   display: flex;
   flex: 1;
-  justify-content: space-evenly;
-  margin: 0 auto;
   align-items: center;
 }
 
 .left {
   display: flex;
-  justify-content: center;
-  align-items: start;
-  max-width: 500px;
+  width: 100%;
+  height: 100%;
   flex-direction: column;
-  margin-right: 8px;
 }
 
-.left .title {
+.left .skills {
   display: block;
   color: white;
   font-weight: 700;
   font-size: 4rem;
   line-height: 70px;
+  margin-top: 50px;
 }
 
-.left .title span:first-child {
+.left .skills span:first-child {
   display: block;
   color: var(--gray);
 }
 
-.left .title span strong {
+.left .skills span strong {
   color: white;
 }
 
-.left .title strong {
+.left .skills strong {
   color: var(--secondary);
 }
 
-.left .actions {
-  width: 100%;
+.left .tab {
   display: flex;
-  justify-content: flex-start;
-  margin-top: 100px;
+  justify-content: space-around;
+  overflow: hidden;
+  margin-top: 30px;
 }
 
-.left .actions span {
-  min-width: 200px;
-  max-width: 200px;
-  background-color: var(--gray);
+.left .tab button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.left .tab button:hover {
+  color: var(--secondary);
+}
+
+.left .tab button.active {
+  color: var(--secondary);
+}
+
+.left #Skills, .left #Projects, .left #Love {
   padding: 20px;
-  text-align: center;
-  border-radius: 5px;
+  display: none;
+  height: 100%;
+  border: 1px solid var(--whiteDark);
+  margin: 30px 0;
+  border-radius: 4px;
+}
+
+.left #Skills ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  width: 100%;
+}
+
+.left #Skills ul li {
   color: var(--white);
   font-size: 1.4rem;
-  font-weight: 800;
-  box-shadow: 0 0 7px 2px var(--secondary);
-  transition: all 0.2s ease-in-out;
-  cursor: default;
 }
 
-.left .actions span:hover {
-  transform: translateY(-2px);
-  color: var(--black);
+.left #Skills ul li {
+  color: var(--white);
+  font-size: 1.4rem;
+}
+
+.left #Skills ul li .skill {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left #Skills ul li .skill > div {
+  flex: 1;
+  display: flex;
+  width: 10px;
+  align-items: flex-end;
+  margin: 10px 0;
+  box-shadow: 0 0 2px 3px var(--secondary);
+  border-radius: 4px;
+}
+
+.left #Skills ul li .skill > div > div {
+  flex: 1;
+  height: 95%;
   background-color: var(--secondary);
+  box-shadow: 0 0 7px 2px var(--secondary);
+}
+
+.left #Skills ul li .skill > .javascript {
+  box-shadow: 0 0 2px 3px var(--javascript);
+}
+
+.left #Skills ul li .skill > .javascript > div {
+  box-shadow: 0 0 2px 3px var(--javascript);
+  background-color: var(--javascript);
+}
+
+.left #Skills ul li .skill > .node-js {
+  box-shadow: 0 0 2px 3px var(--secondary);
+}
+
+.left #Skills ul li .skill > .node-js > div {
+  height: 83%;
+  box-shadow: 0 0 2px 3px var(--secondary);
+  background-color: var(--secondary);
+}
+
+.left #Skills ul li .skill > .react-js {
+  box-shadow: 0 0 2px 3px var(--react);
+}
+
+.left #Skills ul li .skill > .react-js > div {
+  height: 90%;
+  box-shadow: 0 0 2px 3px var(--react);
+  background-color: var(--react);
+}
+
+.left #Skills ul li .skill > .react-native {
+  box-shadow: 0 0 2px 3px var(--react);
+}
+
+.left #Skills ul li .skill > .react-native > div {
+  height: 90%;
+  box-shadow: 0 0 2px 3px var(--react-native);
+  background-color: var(--react-native);
+}
+
+.left #Skills ul li .skill > .java {
+  box-shadow: 0 0 2px 3px var(--java);
+}
+
+.left #Skills ul li .skill > .java > div {
+  height: 70%;
+  box-shadow: 0 0 2px 3px var(--java);
+  background-color: var(--java);
+}
+
+.left #Skills ul li .skill > .figma {
+  box-shadow: 0 0 2px 3px var(--figma);
+}
+
+.left #Skills ul li .skill > .figma > div {
+  height: 65%;
+  box-shadow: 0 0 2px 3px var(--figma);
+  background-color: var(--figma);
 }
 
 .right img {
@@ -320,7 +433,7 @@ footer span {
     margin-bottom: 4px;
   }
 
-  .left .title {
+  .left .skills {
     display: flex;
     flex-direction: column;
     font-size: 2.6rem;
@@ -332,7 +445,7 @@ footer span {
 }
 
 @media screen and (max-width: 375px) {
-  .left .title {
+  .left .skills {
     display: flex;
     flex-direction: column;
     font-size: 2rem;
@@ -352,7 +465,7 @@ footer span {
 }
 
 @media screen and (max-width: 355px) {
-  .left .title {
+  .left .skills {
     display: flex;
     flex-direction: column;
     font-size: 1.7rem;
