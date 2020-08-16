@@ -52,20 +52,29 @@ header > a {
   width: 200px;
 }
 
-header > a > span {
+header > a > .me {
   transition: all 0.2s ease-in-out;
 }
 
-header > a > span > strong {
+header > a > .me > strong {
   color: var(--secondary);
   transition: all 0.2s ease-in-out;
+  animation: glow 0.5s infinite alternate;
+  animation-timing-function: ease-in-out;  
 }
 
-header > a:hover span {
+@keyframes glow {
+  to {
+    text-shadow: 0 0 10px var(--secondary);
+  }
+}
+
+header > a:hover .me {
   color: var(--secondary);
 }
 
-header > a:hover span strong {
+
+header > a:hover .me strong {
   color: var(--white);
 }
 
@@ -305,6 +314,39 @@ nav li a {
   background-color: var(--figma);
 }
 
+.left #Projects {
+  justify-content: center;
+  align-items: center;
+}
+
+.left #Projects span {
+  font-size: 2rem;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.left #Projects span > strong {
+  color: var(--secondary);
+  transition: all 0.2s ease-in-out;
+  animation: glow 0.5s infinite alternate;
+  animation-timing-function: ease-in-out;  
+}
+
+@keyframes glow {
+  to {
+    text-shadow: 0 0 10px var(--secondary);
+  }
+}
+
+.left #Projects span:hover {
+  color: var(--secondary);
+}
+
+.left #Projects span:hover strong {
+  color: var(--white);
+}
+
 .right img {
   border-radius: 5px;
   filter: brightness(0.7);
@@ -511,11 +553,20 @@ footer span {
   .left .actions {
     margin-top: 50px;
   }
+
+  footer {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 @media screen and (max-width: 400px) {
   .left #Skills, .left #Projects, .left #Love {
     align-items: flex-start;
+  }
+
+  .left #Projects {
+    align-items: center;
   }
 }
 
@@ -527,14 +578,8 @@ footer span {
     line-height: 50px;
   }
 
-}
   .left .tab button { 
     font-size: 1.6rem;
-  }
-
-  footer {
-    flex-direction: column;
-    gap: 10px;
   }
   
 }

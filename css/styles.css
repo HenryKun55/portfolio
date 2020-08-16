@@ -52,6 +52,14 @@ header > a > span {
 header > a > span > strong {
   color: var(--secondary);
   transition: all 0.2s ease-in-out;
+  animation: glow 0.5s infinite alternate;
+  animation-timing-function: ease-in-out;  
+}
+
+@keyframes glow {
+  to {
+    text-shadow: 0 0 10px var(--secondary);
+  }
 }
 
 header > a:hover span {
