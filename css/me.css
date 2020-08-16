@@ -491,6 +491,14 @@ nav li a {
 .left #MyHistory ul li .history i {
   font-size: 1.5rem;
   color: var(--figma);
+  animation: glow 0.5s infinite reverse;
+  animation-timing-function: ease-in-out;  
+}
+
+@keyframes glow {
+  to {
+    text-shadow: 0 0 10px var(--figma);
+  }
 }
 
 .left #MyHistory ul li .history span{
