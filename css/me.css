@@ -12,7 +12,7 @@
   --darkGray: darkslategray;
 
   --javascript: #F0D91D;
-  --react: #61dafb;
+  --react-js: #61dafb;
   --react-native: #40bbdd;
   --java: #2F958E;
   --figma: #F86E60;
@@ -207,6 +207,8 @@ nav li a {
   justify-content: space-evenly;
   gap: 10px;
   width: 100%;
+  border: 1px solid var(--whiteDark);
+  padding: 20px;
 }
 
 .left #Skills ul li {
@@ -264,17 +266,17 @@ nav li a {
 }
 
 .left #Skills ul li .skill > .react-js {
-  box-shadow: 0 0 2px 3px var(--react);
+  box-shadow: 0 0 2px 3px var(--react-js);
 }
 
 .left #Skills ul li .skill > .react-js > div {
   height: 90%;
-  box-shadow: 0 0 2px 3px var(--react);
-  background-color: var(--react);
+  box-shadow: 0 0 2px 3px var(--react-js);
+  background-color: var(--react-js);
 }
 
 .left #Skills ul li .skill > .react-native {
-  box-shadow: 0 0 2px 3px var(--react);
+  box-shadow: 0 0 2px 3px var(--react-native);
 }
 
 .left #Skills ul li .skill > .react-native > div {
@@ -397,6 +399,10 @@ footer span {
 
 @media screen and (max-width: 800px) {
 
+  body {
+    overflow: hidden;
+  }
+
   nav ul {
     width: 300px;
   }
@@ -404,22 +410,85 @@ footer span {
   .content {
     display: flex;
     width: 100%;
+    overflow: auto;
+    margin-bottom: 10px;
   }
 
   .left {
-    max-width: max-content;
     margin-right: 0;
     text-align: center;  
     margin-bottom: 8px;
   }
 
-  .right {
-    display: none;
+  .left .tab {
+    overflow: hidden;
+    margin: 10px 0;
+    justify-content: space-between;
   }
 
-  .left .actions {
-    justify-content: center;
+  .left #Skills ul {
+    overflow: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: fit-content;
   }
+
+  .left #Skills, .left #Projects, .left #Love {
+    overflow: auto;
+    padding: 0;
+    margin: 0;  
+    border: 0;
+    align-items: center;
+  }
+
+  .left #Skills ul li .skill {
+    align-items: flex-start;
+  }
+
+  .left #Skills ul li .skill > span:last-child {
+    width: 100%;
+    text-align: end;
+    font-size: 1.1rem;
+  }
+
+  .left #Skills ul li .skill > div {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 5px;
+    margin: 5px 0;
+  }
+
+  .left #Skills ul li .skill > .javascript > div {
+    width: 95%;
+    box-shadow: 0 0 1px 1px var(--javascript);
+  }
+  
+  .left #Skills ul li .skill > .node-js > div {
+    width: 80%;
+    box-shadow: 0 0 1px 1px var(--secondary);
+  }
+
+  .left #Skills ul li .skill > .react-js > div {
+    width: 90%;
+    box-shadow: 0 0 1px 1px var(--react-js);
+  }
+
+  .left #Skills ul li .skill > .react-native > div {
+    width: 90%;
+    box-shadow: 0 0 1px 1px var(--react-native);
+  }
+
+  .left #Skills ul li .skill > .java > div {
+    width: 70%;
+    box-shadow: 0 0 1px 1px var(--java);
+  }
+
+  .left #Skills ul li .skill > .figma > div {
+    width: 65%;
+    box-shadow: 0 0 1px 1px var(--figma);
+  }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -444,6 +513,12 @@ footer span {
   }
 }
 
+@media screen and (max-width: 400px) {
+  .left #Skills, .left #Projects, .left #Love {
+    align-items: flex-start;
+  }
+}
+
 @media screen and (max-width: 375px) {
   .left .skills {
     display: flex;
@@ -452,11 +527,11 @@ footer span {
     line-height: 50px;
   }
 
-  .left .actions span { 
-    min-height: auto;
-    font-size: 1.2rem;
+}
+  .left .tab button { 
+    font-size: 1.6rem;
   }
-  
+
   footer {
     flex-direction: column;
     gap: 10px;
