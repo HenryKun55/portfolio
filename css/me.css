@@ -203,7 +203,7 @@ nav li a {
   color: var(--secondary);
 }
 
-.left #Skills, .left #Projects, .left #Love {
+.left #Skills, .left #Projects, .left #MyHistory, .left #Love {
   display: none;
   flex: 1;
   border-radius: 4px;
