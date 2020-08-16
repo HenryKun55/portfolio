@@ -191,6 +191,8 @@ nav li a {
   font-size: 2rem;
   font-weight: 600;
   color: var(--white);
+  height: fit-content;
+  white-space: pre;
 }
 
 .left .tab button:hover {
@@ -202,14 +204,12 @@ nav li a {
 }
 
 .left #Skills, .left #Projects, .left #Love {
-  padding: 20px 0;
   display: none;
-  height: 100%;
-  margin: 30px 0;
+  flex: 1;
   border-radius: 4px;
 }
 
-.left #Skills ul {
+.left #Skills ul, .left #MyHistory ul {
   list-style: none;
   display: flex;
   justify-content: space-evenly;
@@ -217,6 +217,12 @@ nav li a {
   width: 100%;
   border: 1px solid var(--whiteDark);
   padding: 20px;
+  margin: 10px 0;
+  flex: 1;
+}
+
+.left #MyHistory ul {
+  flex-direction: column;
 }
 
 .left #Skills ul li {
@@ -333,6 +339,25 @@ nav li a {
   animation-timing-function: ease-in-out;  
 }
 
+.left #Love {
+  justify-content: center;
+  align-items: center;
+}
+
+.left #Love span {
+  font-size: 2rem;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.left #Love span > strong {
+  color: var(--secondary);
+  transition: all 0.2s ease-in-out;
+  animation: glow 0.5s infinite alternate;
+  animation-timing-function: ease-in-out;  
+}
+
 @keyframes glow {
   to {
     text-shadow: 0 0 10px var(--secondary);
@@ -345,6 +370,132 @@ nav li a {
 
 .left #Projects span:hover strong {
   color: var(--white);
+}
+
+.left #MyHistory ul div.line {
+  height: 1px;
+  background-color: var(--gray);
+}
+
+.left #MyHistory ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.left #MyHistory ul li span.first, 
+.left #MyHistory ul li span.second,
+.left #MyHistory ul li span.third,
+.left #MyHistory ul li span.fourth,
+.left #MyHistory ul li span.fifth,
+.left #MyHistory ul li span.sixth
+{
+  font-size: 1.6rem;
+  color: var(--javascript);
+  font-weight: 700;
+}
+
+.left #MyHistory ul li span.second {
+  color: var(--secondary);
+}
+
+.left #MyHistory ul li span.third {
+  color: var(--react-js);
+}
+
+.left #MyHistory ul li span.fourth {
+  color: var(--react-native);
+}
+
+.left #MyHistory ul li span.fifth {
+  color: var(--java);
+}
+
+.left #MyHistory ul li span.sixth {
+  color: var(--figma);
+}
+
+.left #MyHistory ul li div.first {
+  flex: 1;
+  height: 5px;
+  background: var(--javascript);
+  border-radius: 5px;
+}
+
+.left #MyHistory ul li div.second {
+  flex: 1;
+  height: 5px;
+  background: var(--secondary);
+  border-radius: 5px;
+}
+
+.left #MyHistory ul li div.third {
+  flex: 1;
+  height: 5px;
+  background: var(--react-js);
+  border-radius: 5px;
+}
+
+.left #MyHistory ul li div.fourth {
+  flex: 1;
+  height: 5px;
+  background: var(--react-native);
+  border-radius: 5px;
+}
+
+.left #MyHistory ul li div.fifth {
+  flex: 1;
+  height: 5px;
+  background: var(--java);
+  border-radius: 5px;
+}
+
+.left #MyHistory ul li div.sixth {
+  flex: 1;
+  height: 5px;
+  background: var(--figma);
+  border-radius: 5px;
+}
+
+/* .left #MyHistory ul li div.time .circle{
+  background-color: var(--figma);
+  width: 60%;
+  height: 60%;
+  display: block;
+  border-radius: 50%;
+} */
+
+/* .left #MyHistory ul li div.time .line-left{
+  width: 10px;
+  height: 10px;
+  left: 0;
+  background-color: var(--figma);
+  position: absolute;
+}
+
+.left #MyHistory ul li div.time .line-right{
+  width: 10px;
+  height: 10px;
+  right: 0;
+  background-color: var(--figma);
+  position: absolute;
+} */
+
+.left #MyHistory ul li .history{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.left #MyHistory ul li .history i {
+  font-size: 1.5rem;
+  color: var(--figma);
+}
+
+.left #MyHistory ul li .history span{
+  font-size: 1.2rem;
+  color: white;
 }
 
 .right img {
@@ -463,9 +614,10 @@ footer span {
   }
 
   .left .tab {
-    overflow: hidden;
+    overflow-x: auto;
     margin: 10px 0;
     justify-content: space-between;
+    gap: 100px 50px;
   }
 
   .left #Skills ul {
@@ -475,12 +627,13 @@ footer span {
     height: fit-content;
   }
 
-  .left #Skills, .left #Projects, .left #Love {
+  .left #Skills, .left #Projects, .left #MyHistory, .left #Love {
     overflow: auto;
     padding: 0;
     margin: 0;  
     border: 0;
     align-items: center;
+    flex: 1;
   }
 
   .left #Skills ul li .skill {
@@ -533,10 +686,20 @@ footer span {
 
 }
 
+@media screen and (max-width: 600px) {
+  .left .tab button {
+    font-size: 1.7rem;
+  }
+}
+
 @media screen and (max-width: 500px) {
 
   nav ul {
     width: 200px;
+  }
+
+  .left .tab button {
+    font-size: 1.4rem;
   }
 
   .left {
@@ -554,6 +717,10 @@ footer span {
     margin-top: 50px;
   }
 
+  .left #MyHistory ul li {
+    flex-direction: column;
+  }
+
   footer {
     flex-direction: column;
     gap: 10px;
@@ -561,11 +728,11 @@ footer span {
 }
 
 @media screen and (max-width: 400px) {
-  .left #Skills, .left #Projects, .left #Love {
+  .left #Skills, .left #Projects, .left #MyHistory, .left #Love {
     align-items: flex-start;
   }
 
-  .left #Projects {
+  .left #Projects, .left #Love {
     align-items: center;
   }
 }
