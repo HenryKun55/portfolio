@@ -193,10 +193,9 @@ nav li a {
 }
 
 .left #Skills, .left #Projects, .left #Love {
-  padding: 20px;
+  padding: 20px 0;
   display: none;
   height: 100%;
-  border: 1px solid var(--whiteDark);
   margin: 30px 0;
   border-radius: 4px;
 }
