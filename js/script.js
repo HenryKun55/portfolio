@@ -27,3 +27,11 @@ function tab(evt, cityName) {
   document.getElementById(cityName).style.display = "flex";
   evt.currentTarget.className += " active";
 }
+
+function sendMessage() {
+  const message = 'Tenho uma ideia genial, tu pode me ajudar?'
+  const phone = '+5581991810727'
+  window.open(
+    `whatsapp://send?text=${message}&phone=${phone}`, 
+    "_self")
+}
