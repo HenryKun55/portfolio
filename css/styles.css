@@ -337,6 +337,12 @@ footer span {
   .left .actions {
     margin-top: 50px;
   }
+
+  footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
 }
 
 @media screen and (max-width: 375px) {
@@ -351,12 +357,7 @@ footer span {
     min-height: auto;
     font-size: 1.2rem;
   }
-  
-  footer {
-    flex-direction: column;
-    gap: 10px;
-  }
-  
+
 }
 
 @media screen and (max-width: 355px) {

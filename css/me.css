@@ -59,11 +59,11 @@ header > a > .me {
 header > a > .me > strong {
   color: var(--secondary);
   transition: all 0.2s ease-in-out;
-  animation: glow 0.5s infinite alternate;
+  animation: header 0.5s infinite alternate;
   animation-timing-function: ease-in-out;  
 }
 
-@keyframes glow {
+@keyframes header {
   to {
     text-shadow: 0 0 10px var(--secondary);
   }
@@ -354,11 +354,11 @@ nav li a {
 .left #Love span > strong {
   color: var(--secondary);
   transition: all 0.2s ease-in-out;
-  animation: glow 0.5s infinite alternate;
+  animation: love 0.5s infinite alternate;
   animation-timing-function: ease-in-out;  
 }
 
-@keyframes glow {
+@keyframes love {
   to {
     text-shadow: 0 0 10px var(--secondary);
   }
@@ -457,30 +457,6 @@ nav li a {
   background: var(--figma);
   border-radius: 5px;
 }
-
-/* .left #MyHistory ul li div.time .circle{
-  background-color: var(--figma);
-  width: 60%;
-  height: 60%;
-  display: block;
-  border-radius: 50%;
-} */
-
-/* .left #MyHistory ul li div.time .line-left{
-  width: 10px;
-  height: 10px;
-  left: 0;
-  background-color: var(--figma);
-  position: absolute;
-}
-
-.left #MyHistory ul li div.time .line-right{
-  width: 10px;
-  height: 10px;
-  right: 0;
-  background-color: var(--figma);
-  position: absolute;
-} */
 
 .left #MyHistory ul li .history{
   display: flex;
@@ -729,19 +705,17 @@ footer span {
     flex-direction: column;
   }
 
-  footer {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
-@media screen and (max-width: 400px) {
   .left #Skills, .left #Projects, .left #MyHistory, .left #Love {
     align-items: flex-start;
   }
 
   .left #Projects, .left #Love {
     align-items: center;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
